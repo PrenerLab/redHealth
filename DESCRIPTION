@@ -1,0 +1,15 @@
+Package: redHealth
+Type: Package
+Title: Functions for the Redlining and Health Project
+Version: 0.1.0
+Authors@R: c(
+    person("Christopher", "Prener", ,"chris.prener@slu.edu", c("aut", "cre"))
+    )
+Description: This package contains functions written to facilitate Chris's
+    redlining and health project. This is a research focused package, so
+    documentation is not as developed as a package destined for CRAN.
+License: GPL-3 + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr
