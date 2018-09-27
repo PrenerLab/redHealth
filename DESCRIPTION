@@ -9,6 +9,7 @@ Description: This package contains functions written to facilitate Chris's
     redlining and health project. This is a research focused package, so
     documentation is not as developed as a package destined for CRAN.
 License: GPL-3 + file LICENSE
+RoxygenNote: 6.1.0
 Encoding: UTF-8
 LazyData: true
 Imports:
