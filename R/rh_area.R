@@ -9,6 +9,7 @@
 #'
 #' @return A tibble with a row for each tract GEOID and the corresponding area redlined for a given category.
 #'
+#' @importFrom dplyr %>%
 #' @importFrom dplyr filter
 #' @importFrom dplyr group_by
 #' @importFrom dplyr mutate
