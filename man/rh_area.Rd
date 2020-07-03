@@ -4,14 +4,15 @@
 \alias{rh_area}
 \title{Calculate Redlined Area per Tract}
 \usage{
-rh_area(tract, holc, cat)
+rh_area(areal_unit, holc, cat)
 }
 \arguments{
-\item{tract}{\code{sf} object with census tract geometry}
+\item{areal_unit}{\code{sf} object with census GEOID column}
 
 \item{holc}{\code{sf} object with redlining geometry}
 
-\item{cat}{string input that is one of \code{"A"}, \code{"B"}, \code{"C"}, or \code{"D"}}
+\item{cat}{string input that is one of \code{"A"}, \code{"B"}, \code{"C"}, or \code{"D"} or
+a vector like \code{c("A", "B")}}
 }
 \value{
 A tibble with a row for each tract GEOID and the corresponding area redlined for a given category.

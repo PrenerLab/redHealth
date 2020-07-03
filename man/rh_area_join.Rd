@@ -4,10 +4,10 @@
 \alias{rh_area_join}
 \title{Combined Measured Areas with Tract Boundaries}
 \usage{
-rh_area_join(tract, area, by, cat)
+rh_area_join(areal_unit, area, by, cat)
 }
 \arguments{
-\item{tract}{\code{sf} object with census tract geometry}
+\item{areal_unit}{\code{sf} object with census GEOID column}
 
 \item{area}{A tbl or data frame containing area of redlining per tract for a given grade}
 

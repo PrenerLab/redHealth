@@ -4,7 +4,7 @@
 #'     \code{rh_area} and combines them to provide area measurements for each feature regardless
 #'     of if it was redlined or not.
 #'
-#' @param tract \code{sf} object with census tract geometry
+#' @param areal_unit \code{sf} object with census GEOID column
 #' @param area A tbl or data frame containing area of redlining per tract for a given grade
 #' @param by Variable name common to both \code{tract} and \code{area} (such as \code{GEOID})
 #' @param cat Category name to be given to new variable in the returned \code{sf} object
@@ -18,15 +18,17 @@
 #' @importFrom rlang :=
 #'
 #' @export
-rh_area_join <- function(tract, area, by, cat){
+rh_area_join <- function(areal_unit, area, by, cat){
+
+  # set global bindings
+  HOLC_AREA = NULL
 
   # join data
-  joined <- dplyr::left_join(tract, area, by = by)
+  out <- dplyr::left_join(areal_unit, area, by = by)
 
   # rename variable and fill in zeros
-  joined %>%
-    mutate(AREA = ifelse(is.na(AREA) == TRUE, 0, AREA)) %>%
-    rename(!!cat := AREA) -> out
+  out <- mutate(out, HOLC_AREA = ifelse(is.na(HOLC_AREA) == TRUE, 0, HOLC_AREA))
+  out <- rename(out, !!cat := HOLC_AREA)
 
   # return output
   return(out)
